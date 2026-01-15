@@ -1,3 +1,80 @@
-/*
-    You can add your own custom styles here.
-*/
+/* =================================================================
+   1. 全局变量：定义透明度与模糊度
+   ================================================================= */
+:root {
+    --bg-mask: rgba(255, 255, 255, 0.75); // 背景遮罩（亮）
+    --glass-bg: rgba(255, 255, 255, 0.45); // 卡片半透明度（亮）
+    --glass-border: rgba(255, 255, 255, 0.3);
+}
+
+[data-scheme="dark"] {
+    --bg-mask: rgba(15, 15, 15, 0.8);      // 背景遮罩（暗）
+    --glass-bg: rgba(30, 30, 30, 0.5);    // 卡片半透明度（暗）
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* =================================================================
+   2. 核心背景：确保图片跨模式稳定显示
+   ================================================================= */
+body {
+    background-image: 
+        linear-gradient(var(--bg-mask), var(--bg-mask)), 
+        url('/img/Cure.jpg') !important; 
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center !important;
+    transition: background 0.3s ease;
+}
+
+/* =================================================================
+   3. 毛玻璃卡片：整合全站所有卡片组件
+   ================================================================= */
+.article-list--compact article,
+.article-wrapper,
+.widget,
+.archive-section,
+.article-content,
+.card,
+.archive-entry,
+.tag-cloud,
+.categories {
+    background-color: var(--glass-bg) !important;
+    
+    /* 强化毛玻璃感：20px 模糊 + 180% 饱和度 */
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    
+    border-radius: 16px !important;
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    
+    margin-bottom: 20px !important;
+    transition: transform 0.2s ease, background-color 0.3s ease !important;
+
+    &:hover {
+        transform: translateY(-2px);
+        background-color: rgba(var(--card-background-rgb), 0.6) !important;
+    }
+}
+
+/* =================================================================
+   4. 深度透明化：移除所有阻碍透视的中间层
+   ================================================================= */
+.sidebar, 
+.main-container, 
+.menu-container, 
+.common-container,
+.widget-card {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* 归档页面年份标题增强 */
+.archive-collection__year {
+    color: var(--body-text-color) !important;
+    font-weight: 800;
+    font-size: 1.8rem;
+    padding-left: 10px;
+    border-left: 5px solid var(--accent-color);
+    margin: 30px 0 15px 0;
+}
