@@ -10,7 +10,7 @@ customText = "Powered by <a href='https://archlinux.org/' target='_blank'>Arch L
 
 [dateFormat]
 published = "2006-01-02"
-lastUpdated = "2006-01-02 15:04"
+lastUpdated = "Jan 15, 2026 01:00 GMT"
 
 [sidebar]
 subtitle = "A simple code lover."
@@ -76,7 +76,7 @@ enabled = true
 ## Comments
 [comments]
 enabled = true
-provider = "disqus"
+provider = "giscus"
 
 [comments.disqusjs]
 shortname = ""
@@ -127,13 +127,13 @@ serverName = "cactus.chat"
 siteName = ""
 
 [comments.giscus]
-repo = ""
-repoID = ""
-category = ""
-categoryID = ""
-mapping = ""
-lightTheme = ""
-darkTheme = ""
+repo = "AnCs-Lan/AnCs-Lan.github.io"
+repoID = "R_kgDOQ5zupA"
+category = "Announcements"
+categoryID = "DIC_kwDOQ5zupM4C0-0C"
+mapping = "pathname"
+lightTheme = "light"
+darkTheme = "dark"
 reactionsEnabled = 1
 emitMetadata = 0
 

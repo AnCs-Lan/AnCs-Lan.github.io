@@ -78,3 +78,18 @@ body {
     border-left: 5px solid var(--accent-color);
     margin: 30px 0 15px 0;
 }
+
+/* 适配 Giscus 评论区容器 */
+.giscus {
+    background-color: var(--glass-bg) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    padding: 20px;
+    border-radius: 16px;
+    margin-top: 40px;
+    border: 1px solid var(--glass-border);
+}
+
+/* 隐藏 Giscus 加载前的原始背景，防止突兀 */
+.giscus-frame {
+    background: transparent !important;
+}
