@@ -14,6 +14,9 @@ hasCJKLanguage = true
 # Change it to your Disqus shortname before using
 disqusShortname = "hugo-theme-stack"
 
+# 确保 Hugo 使用上海时区解析所有未注明时区的日期
+timezone = "Asia/Shanghai"
+
 [pagination]
 pagerSize = 5
 

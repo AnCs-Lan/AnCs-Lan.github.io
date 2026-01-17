@@ -10,7 +10,7 @@ customText = "Powered by <a href='https://archlinux.org/' target='_blank'>Arch L
 
 [dateFormat]
 published = "2006-01-02"
-lastUpdated = "Jan 15, 2026 01:00 GMT"
+lastUpdated = "2006-01-02 15:04"
 
 [sidebar]
 subtitle = "A simple code lover."
